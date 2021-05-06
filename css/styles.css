@@ -1,5 +1,6 @@
 body {
   background-color: #fefbf6;
+  padding-top: 60px;
 }
 
 h1 {
@@ -12,14 +13,34 @@ h1 {
   // dos valores para arriba y abajo/ derecha-izquierda
   // cuatro valores de uno en uno, pensando en el sentido del reloj
   // tres valores: arriba, laterales, abajo*/
-  margin: 10px 20px 40px;
+  margin: 0px 0px 40px;
+  padding: 10px 20px;
   margin-bottom: 80px;
+  background-color: #fefbf6;
+
+  /* Ayuda a posicionar las cajas internas de una mejor manera que con inline-block */
+  /* https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/ */
+  /* https://flexboxfroggy.com/#es */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  /* fixed ayuda a que un elemento se quede fijo */
+  position: fixed;
+  /* top y left ayudan a posicionar la caja en el navegador */
+  top: 0;
+  left: 0;
+
+  /*En caso de tener un position absolute o fixed esto ayuda a que la caja tenga el ancho al 100%*/
+  width: 100%;
+
+  /* Esto corrije el tamaño de la caja para que tome en el width lo que mide padding y border */
+  box-sizing: border-box;
 }
 
 .header > * {
-  display: inline-block;
   font-size: 16px;
-  vertical-align: middle;
   height: 100%;
   line-height: 45px;
 }
@@ -32,11 +53,10 @@ h1 {
   text-align: center;
   color: #025157;
   font-weight: 500;
-  margin: 0 5%;
+  margin: 0 10px;
 }
 
 .actions {
-  width: 15%;
   text-align: right;
   font-size: 14px;
   font-weight: 600;
